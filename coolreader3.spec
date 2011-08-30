@@ -21,5 +21,5 @@ cmake -D GUI=QT -D CMAKE_BUILD_TYPE=Release -D MAX_IMAGE_SCALE_MUL=2 -D DOC_DATA
 %make
 #make install
 
-
-
+%install
+%makeinstall
