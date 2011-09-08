@@ -1,13 +1,13 @@
 %define		shortname	cr3
 
 Name:		coolreader3
-Version:	3.0.45
+Version:	3.0.49
 Release:	%mkrel 1
 Summary:	Free e-book reader
 Group:		Books/Literature
 License:	GPL
-Source:		%{name}-%{version}.tar.bz2
-Patch:		%{name}.desktop.patch
+Source:		%{shortname}_%{version}.orig.tar.gz
+Patch:		%{shortname}.desktop.patch
 URL:		http://www.coolreader.org
 BuildRequires:	libqt4-devel, cmake, libpng-devel, libjpeg-devel, libfontconfig-devel, zlib1-devel
 
@@ -15,7 +15,7 @@ BuildRequires:	libqt4-devel, cmake, libpng-devel, libjpeg-devel, libfontconfig-d
 Free e-book reader
 
 %prep
-%setup -q
+%setup -q -n %{shortname}-%{version}
 %patch -p0
 
 %build
@@ -34,8 +34,8 @@ cd qtbuild
 %{_datadir}/%{shortname}/*.css
 %{_datadir}/%{shortname}/i18n/*.qm
 %{_datadir}/%{shortname}/hyph/*.pdb
-%{_datadir}/%{shortname}/textures/textures/*.jpg
-%{_datadir}/%{shortname}/backgrounds/backgrounds/*.jpg
+%{_datadir}/%{shortname}/textures/*.jpg
+%{_datadir}/%{shortname}/backgrounds/*.jpg
 %{_datadir}/pixmaps/%{shortname}.*
 %{_datadir}/applications/%{shortname}.desktop
 %{_datadir}/doc/%{shortname}/*
