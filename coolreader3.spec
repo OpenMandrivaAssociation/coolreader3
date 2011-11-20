@@ -1,13 +1,13 @@
-%define		shortname	cr3
+%define		shortname	cr
 
 Name:		coolreader3
-Version:	3.0.49
+Version:	3.0.50
 Release:	%mkrel 1
 Summary:	Free e-book reader
 Group:		Books/Literature
 License:	GPL
-Source:		%{shortname}_%{version}.orig.tar.gz
-Patch:		%{shortname}.desktop.patch
+Source:		%{shortname}3_%{version}.orig.tar.gz
+Patch:		%{shortname}3.desktop.patch
 URL:		http://www.coolreader.org
 BuildRequires:	libqt4-devel, cmake, libpng-devel, libjpeg-devel, libfontconfig-devel, zlib1-devel
 
@@ -15,7 +15,7 @@ BuildRequires:	libqt4-devel, cmake, libpng-devel, libjpeg-devel, libfontconfig-d
 Free e-book reader
 
 %prep
-%setup -q -n %{shortname}-%{version}
+%setup -q -n %{shortname}%{version}-3
 %patch -p0
 
 %build
@@ -30,16 +30,16 @@ cd qtbuild
 
 %files
 %defattr(-,root,root)
-%{_bindir}/%{shortname}
-%{_datadir}/%{shortname}/*.css
-%{_datadir}/%{shortname}/i18n/*.qm
-%{_datadir}/%{shortname}/hyph/*.pdb
-%{_datadir}/%{shortname}/textures/*.jpg
-%{_datadir}/%{shortname}/backgrounds/*.jpg
-%{_datadir}/pixmaps/%{shortname}.*
-%{_datadir}/applications/%{shortname}.desktop
-%{_datadir}/doc/%{shortname}/*
-%{_mandir}/man1/%{shortname}.*
+%{_bindir}/%{shortname}3
+%{_datadir}/%{shortname}3/*.css
+%{_datadir}/%{shortname}3/i18n/*.qm
+%{_datadir}/%{shortname}3/hyph/*.pdb
+%{_datadir}/%{shortname}3/textures/*.jpg
+%{_datadir}/%{shortname}3/backgrounds/*.jpg
+%{_datadir}/pixmaps/%{shortname}3.*
+%{_datadir}/applications/%{shortname}3.desktop
+%{_datadir}/doc/%{shortname}3/*
+%{_mandir}/man1/%{shortname}3.*
 
 %clean
 rm -rf %{buildroot}
