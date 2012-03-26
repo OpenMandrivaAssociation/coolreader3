@@ -15,7 +15,7 @@ BuildRequires:	libqt4-devel, cmake, libpng-devel, libjpeg-devel, libfontconfig-d
 Free e-book reader
 
 %prep
-%setup -q -n %{shortname}%{version}-3
+%setup -q -n %{shortname}%{version}-7
 %patch -p0
 
 %build
