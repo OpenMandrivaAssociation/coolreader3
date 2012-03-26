@@ -10,7 +10,7 @@ Source:		%{shortname}3_%{version}.orig.tar.gz
 Patch:		%{shortname}3.desktop.patch
 URL:		http://www.coolreader.org
 BuildRequires:	libqt4-devel, cmake, libpng-devel, libjpeg-devel, zlib1-devel
-BuildRequires:	pkgconfig (libfontconfig)
+BuildRequires:	pkgconfig(libfontconfig)
 
 %description
 Free e-book reader
