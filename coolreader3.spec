@@ -1,7 +1,7 @@
 %define		shortname	cr
 
 Name:		coolreader3
-Version:	3.0.50
+Version:	3.0.56
 Release:	%mkrel 1
 Summary:	Free e-book reader
 Group:		Books/Literature
