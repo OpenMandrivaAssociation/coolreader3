@@ -6,27 +6,28 @@ Release:	%mkrel 1
 Summary:	Free e-book reader
 Group:		Books/Literature
 License:	GPL
-Source:		%{shortname}3_%{version}.orig.tar.gz
-Patch:		%{shortname}3.desktop.patch
+Source0:	%{shortname}3_%{version}.orig.tar.gz
 URL:		http://www.coolreader.org
 BuildRequires:	libqt4-devel, cmake, libpng-devel, libjpeg-devel, zlib1-devel
-BuildRequires:	pkgconfig(libfontconfig)
+BuildRequires:	pkgconfig(fontconfig)
 
 %description
-Free e-book reader
+CoolReader 3.X is free open-source (GPL) multiplatform version under active
+development.
 
 %prep
 %setup -q -n %{shortname}%{version}-7
-%patch -p0
 
 %build
-mkdir qtbuild
-cd qtbuild
-cmake -D GUI=QT -D CMAKE_BUILD_TYPE=Release -D MAX_IMAGE_SCALE_MUL=2 -D DOC_DATA_COMPRESSION_LEVEL=3 -D DOC_BUFFER_SIZE=0x1400000 -D CMAKE_INSTALL_PREFIX=/usr ..
+%cmake \
+	-DGUI=QT \
+	-DMAX_IMAGE_SCALE_MUL=2 \
+	-DDOC_DATA_COMPRESSION_LEVEL=3 \
+	-DDOC_BUFFER_SIZE=0x1400000
 %make
 
 %install
-cd qtbuild
+cd build
 %makeinstall_std
 
 %files
@@ -35,12 +36,10 @@ cd qtbuild
 %{_datadir}/%{shortname}3/*.css
 %{_datadir}/%{shortname}3/i18n/*.qm
 %{_datadir}/%{shortname}3/hyph/*.pdb
+%{_datadir}/%{shortname}3/hyph/*.pattern
 %{_datadir}/%{shortname}3/textures/*.jpg
 %{_datadir}/%{shortname}3/backgrounds/*.jpg
 %{_datadir}/pixmaps/%{shortname}3.*
 %{_datadir}/applications/%{shortname}3.desktop
 %{_datadir}/doc/%{shortname}3/*
 %{_mandir}/man1/%{shortname}3.*
-
-%clean
-rm -rf %{buildroot}
