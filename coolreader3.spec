@@ -44,3 +44,25 @@ cd build
 %{_datadir}/applications/%{shortname}3.desktop
 %{_datadir}/doc/%{shortname}3/*
 %{_mandir}/man1/%{shortname}3.*
+
+
+%changelog
+* Wed Apr 04 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 3.0.56-1mdv2011.0
++ Revision: 789189
+- fix BR
+- specfile cleanup
+
+  + Sergey Zhemoitel <serg@mandriva.org>
+    - update to 3.0.56
+    - add new version 3.0.50
+
+* Thu Sep 08 2011 Sergey Zhemoitel <serg@mandriva.org> 3.0.49-1
++ Revision: 698983
+- new version 3.0.49
+- fix build, add russian comment in .desktop
+- fix install in spec
+
+* Sun Aug 28 2011 Sergey Zhemoitel <serg@mandriva.org> 3.0.45-1
++ Revision: 697261
+- imported package coolreader3
+
