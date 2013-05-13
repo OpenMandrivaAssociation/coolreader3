@@ -2,7 +2,7 @@
 
 Name:		coolreader3
 Version:	3.0.56
-Release:	%mkrel 1
+Release:	2
 Summary:	Free e-book reader
 Group:		Books/Literature
 License:	GPL
