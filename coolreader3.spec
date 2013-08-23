@@ -8,7 +8,7 @@ Group:		Books/Literature
 License:	GPL
 Source0:	%{shortname}3_%{version}.orig.tar.gz
 URL:		http://www.coolreader.org
-BuildRequires:	pkgconfig(Qt3Support), cmake, libpng-devel, libjpeg-devel, zlib1-devel
+BuildRequires:	pkgconfig(Qt3Support), cmake, libpng-devel, jpeg-devel, zlib1-devel
 BuildRequires:	pkgconfig(fontconfig)
 
 %description
