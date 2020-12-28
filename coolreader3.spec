@@ -2,18 +2,25 @@
 
 Summary:	Free e-book reader
 Name:		coolreader3
-Version:	3.0.56
-Release:	4
+Version:	3.2.51
+Release:	1
 License:	GPLv2+
 Group:		Books/Literature
-Url:		http://www.coolreader.org
-Source0:	%{shortname}3_%{version}.orig.tar.gz
-BuildRequires:	cmake
-BuildRequires:	jpeg-devel
-BuildRequires:	pkgconfig(fontconfig)
-BuildRequires:	pkgconfig(libpng)
-BuildRequires:	pkgconfig(Qt3Support)
-BuildRequires:	pkgconfig(zlib)
+URL: https://sourceforge.net/projects/crengine
+Source0: https://github.com/buggins/coolreader/archive/cr%{version}/coolreader-cr%{version}.tar.gz
+BuildRequires: cmake
+BuildRequires: pkgconfig(fontconfig)
+BuildRequires: pkgconfig(libpng)
+BuildRequires: pkgconfig(zlib)
+BuildRequires: pkgconfig(libjpeg)
+BuildRequires: pkgconfig(fribidi)
+BuildRequires: pkgconfig(freetype2)
+BuildRequires: pkgconfig(harfbuzz)
+BuildRequires: pkgconfig(libunibreak)
+BuildRequires: cmake(Qt5Core)
+BuildRequires: cmake(Qt5Gui)
+BuildRequires: cmake(Qt5LinguistTools)
+
 
 %description
 CoolReader 3.X is free open-source (GPL) multiplatform version under active
@@ -35,17 +42,19 @@ development.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{shortname}%{version}-7
+%autosetup -n %{name}-cr%{version}
 
 %build
 %cmake \
-	-DGUI=QT \
-	-DMAX_IMAGE_SCALE_MUL=2 \
-	-DDOC_DATA_COMPRESSION_LEVEL=3 \
-	-DDOC_BUFFER_SIZE=0x1400000 \
-	-DCMAKE_BUILD_TYPE=Release
-%make
+	-DGUI=QT5 \
+  	-DCMAKE_BUILD_TYPE=Release \
+  	-DMAX_IMAGE_SCALE_MUL=2 \
+  	-DDOC_DATA_COMPRESSION_LEVEL=3 \
+  	-DDOC_BUFFER_SIZE=0x1400000 \
+  	-D CMAKE_INSTALL_PREFIX=/usr
+	
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
