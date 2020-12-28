@@ -40,7 +40,7 @@ development.
 %{_datadir}/cr3/hyph/
 %{_datadir}/cr3/textures/
 %{_datadir}/pixmaps/cr3.*
-%{_metainfodir}/cr3.appdata.xml
+#{_metainfodir}/cr3.appdata.xml
 %{_mandir}/man1/cr3.1*
 %doc %{_docdir}/cr3
 %doc README.md
