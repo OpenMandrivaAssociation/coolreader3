@@ -8,7 +8,9 @@ License:	GPLv2+
 Group:		Books/Literature
 URL: https://sourceforge.net/projects/crengine
 Source0: https://github.com/buggins/coolreader/archive/cr%{version}/coolreader-cr%{version}.tar.gz
+
 BuildRequires: cmake
+BuildRequires: qmake5
 BuildRequires: pkgconfig(fontconfig)
 BuildRequires: pkgconfig(libpng)
 BuildRequires: pkgconfig(zlib)
