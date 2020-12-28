@@ -42,7 +42,7 @@ development.
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -n %{name}-cr%{version}
+%autosetup -n coolreader-cr%{version}
 
 %build
 %cmake \
