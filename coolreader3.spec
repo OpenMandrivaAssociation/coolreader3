@@ -29,18 +29,21 @@ BuildRequires: cmake(Qt5LinguistTools)
 CoolReader 3.X is free open-source (GPL) multiplatform version under active
 development.
 
-%files
-%{_bindir}/%{shortname}3
-%{_datadir}/%{shortname}3/*.css
-%{_datadir}/%{shortname}3/i18n/*.qm
-%{_datadir}/%{shortname}3/hyph/*.pdb
-%{_datadir}/%{shortname}3/hyph/*.pattern
-%{_datadir}/%{shortname}3/textures/*.jpg
-%{_datadir}/%{shortname}3/backgrounds/*.jpg
-%{_datadir}/pixmaps/%{shortname}3.*
-%{_datadir}/applications/%{shortname}3.desktop
-%{_datadir}/doc/%{shortname}3/*
-%{_mandir}/man1/%{shortname}3.*
+	
+%files -f cr3.lang
+%license LICENSE
+%{_bindir}/cr3
+%{_datadir}/applications/cr3.desktop
+%dir %{_datadir}/cr3
+%{_datadir}/cr3/*.css
+%{_datadir}/cr3/backgrounds/
+%{_datadir}/cr3/hyph/
+%{_datadir}/cr3/textures/
+%{_datadir}/pixmaps/cr3.*
+%{_metainfodir}/cr3.appdata.xml
+%{_mandir}/man1/cr3.1*
+%doc %{_docdir}/cr3
+%doc README.md
 
 #----------------------------------------------------------------------------
 
@@ -61,3 +64,5 @@ development.
 %install
 %make_install -C build
 
+	
+%find_lang cr3 --with-qt --without-mo
