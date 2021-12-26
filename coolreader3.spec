@@ -24,6 +24,7 @@ BuildRequires: cmake(Qt5Gui)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires:	pkgconfig(libzstd)
+BuildRequires:	pkgconfig(libutf8proc)
 
 
 %description
