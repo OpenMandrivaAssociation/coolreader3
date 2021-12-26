@@ -23,6 +23,7 @@ BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5Gui)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5LinguistTools)
+BuildRequires:	pkgconfig(libzstd)
 
 
 %description
