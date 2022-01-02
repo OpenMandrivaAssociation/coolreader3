@@ -18,13 +18,13 @@ BuildRequires: pkgconfig(libjpeg)
 BuildRequires: pkgconfig(fribidi)
 BuildRequires: pkgconfig(freetype2)
 BuildRequires: pkgconfig(harfbuzz)
-#BuildRequires: pkgconfig(libunibreak)
+BuildRequires: pkgconfig(libunibreak)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5Gui)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5LinguistTools)
-BuildRequires:	pkgconfig(libzstd)
-BuildRequires:	pkgconfig(libutf8proc)
+BuildRequires: pkgconfig(libzstd)
+BuildRequires: pkgconfig(libutf8proc)
 
 
 %description
