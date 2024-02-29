@@ -3,7 +3,7 @@
 Summary:	Free e-book reader
 Name:		coolreader3
 Version:	3.2.59
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Books/Literature
 URL: https://sourceforge.net/projects/crengine
